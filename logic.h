@@ -36,6 +36,17 @@ int createGrid(int x, int y);
 //Returns a positive integer
 unsigned int checkNeighbours(int x, int y);
 
+//Function to set the next state of the cell at X and Y
+//Implements the rules of the game of life.
 int setNextState(int x, int y);
+
+//Function to set the initial values of the grid.
+int setInitialState(int x, int y, bool state);
+
+//Sets the initial value for all the neighbours in the grid.
+int setInitialNeighbours();
+
+//Function to free the memory used by the grid.
+void destroyGrid();
 
 #endif //GAMEOFLIFE_LOGIC_H

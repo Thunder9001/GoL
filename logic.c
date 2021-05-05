@@ -1,10 +1,10 @@
 #include "logic.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 //Ternary operator macro used to compute the maximum and minimum between two values.
-#define MIN(X,Y) (X < Y ? X : Y)
-#define MAX(X,Y) (X > Y ? X : Y)
+//Preprocessor code for MIN and MAX from https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Min-and-Max.html
+#define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
+#define MAX(X,Y) ((X) > (Y) ? (X) : (Y))
 struct Grid grid;
 
 //Returns 0 on successful memory allocation
@@ -12,7 +12,7 @@ struct Grid grid;
 int createGrid(int x, int y)
 {
     //Checks that the height and width of the grid are
-    if((x < MIN_WIDTH) | (y < MIN_HEIGHT) | (x > MAX_WIDTH) | (y > MAX_HEIGHT))
+    if((x < MIN_WIDTH) || (y < MIN_HEIGHT) || (x > MAX_WIDTH) || (y > MAX_HEIGHT))
     {
         return 2;
     }
@@ -36,10 +36,12 @@ int createGrid(int x, int y)
     return 0;
 }
 
+//Returns 0 on successful check.
+//Returns 1 on invalid parameters.
 unsigned int checkNeighbours(int x, int y)
 {
     //Checks the parameters x and y are within the boundaries of the grid.
-    if((x < 0) | (x > grid.width) | (y < 0) | (y > grid.height))
+    if((x < 0) || (x > grid.width) || (y < 0) || (y > grid.height))
     {
         return 1;
     }
@@ -60,10 +62,12 @@ unsigned int checkNeighbours(int x, int y)
     return 0;
 }
 
+//Returns 0 on successful change.
+//Returns 1 on invalid parameters.
 int setNextState(int x, int y)
 {
     //Checks the parameters x and y are within the boundaries of the grid.
-    if((x < 0) | (x > grid.width) | (y < 0) | (y > grid.height))
+    if((x < 0) || (x > grid.width) || (y < 0) || (y > grid.height))
     {
         return 1;
     }
@@ -72,7 +76,7 @@ int setNextState(int x, int y)
     if(grid.cells[y][x].state == true)
     {
         //Rule 1 and Rule 3, set cells dead.
-        if((grid.cells[y][x].neighbours < 1) | (grid.cells[y][x].neighbours > 3))
+        if((grid.cells[y][x].neighbours < 1) || (grid.cells[y][x].neighbours > 3))
         {
             grid.cells[y][x].state = false;
         }
@@ -90,4 +94,38 @@ int setNextState(int x, int y)
     }
 
     return 0;
+}
+
+//Function to set the initial s
+int setInitialState(int x, int y, bool state)
+{
+    //Checks the parameters x and y are within the boundaries of the grid.
+    if((x < 0) || (x > grid.width) || (y < 0) || (y > grid.height))
+    {
+        return 1;
+    }
+    grid.cells[y][x].state = state;
+    return 0;
+}
+
+int setInitialNeighbours()
+{
+    for(int y = 0; y < grid.height; y++)
+    {
+        for(int x = 0; x < grid.width; x++)
+        {
+            if (checkNeighbours(x, y) == 1)
+                return 1;
+        }
+    }
+    return 0;
+}
+
+void destroyGrid()
+{
+    for(int i = 0; i < grid.height; i++)
+    {
+        free(grid.cells[i]);
+    }
+    free(grid.cells);
 }
