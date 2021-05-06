@@ -78,6 +78,7 @@ int writeGrid(FILE *file)
 
     return 0;
 }
+
 //Returns 0 on successful file read
 //Returns 1-10 based on different errors.
 int readState(FILE *file)
@@ -87,6 +88,7 @@ int readState(FILE *file)
     {
         return 1;
     }
+
     //Temporary variables.
     unsigned int count;
     int height, width;
@@ -115,7 +117,7 @@ int readState(FILE *file)
     }
 
     //Reads in the width and height of the grid from the first line of the file.
-    //Converts to unsigned integer.
+    //Converts to an integer.
     fgets(buffer, BUFFER_SIZE, file);
     if(2 != sscanf(buffer, "%[^/]/%s", temp1, temp2))
     {
