@@ -8,6 +8,9 @@
 //Writes the final state of the game of life into a file.
 int writeState(FILE *file);
 
+//Writes a visual representation of the cells into a txt file.
+int writeGrid(FILE *file);
+
 //Reads the initial state of the game of life into the program.
 int readState(FILE *file);
 

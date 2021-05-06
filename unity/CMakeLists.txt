@@ -82,7 +82,7 @@ target_include_directories(${PROJECT_NAME}
 
 set(${PROJECT_NAME}_PUBLIC_HEADERS
         src/unity.h
-        src/unity_internals.h
+        include/unity_internals.h
         $<$<BOOL:${UNITY_EXTENSION_FIXTURE_ENABLED}>:${CMAKE_CURRENT_SOURCE_DIR}/extras/fixture/src/unity_fixture.h>
         $<$<BOOL:${UNITY_EXTENSION_FIXTURE_ENABLED}>:${CMAKE_CURRENT_SOURCE_DIR}/extras/fixture/src/unity_fixture_internals.h>
         $<$<BOOL:${UNITY_EXTENSION_MEMORY_ENABLED}>:${CMAKE_CURRENT_SOURCE_DIR}/extras/memory/src/unity_memory.h>

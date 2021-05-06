@@ -53,8 +53,33 @@ int writeState(FILE *file)
     return 0;
 }
 
+//Returns 0 on successful file write.
+//Returns 1 on invalid file.
+int writeGrid(FILE *file)
+{
+    //Checks if the file is open.
+    if(file == NULL)
+    {
+        return 1;
+    }
+
+    //Writes the width and the height of the grid on the first line.
+    fprintf(file,"%i/%i\n", grid.width, grid.height);
+
+    //Writes the grid into the file.
+    for(int y = 0; y < grid.height; y++)
+    {
+        for(int x = 0; x < grid.width; x++)
+        {
+            fprintf(file, "%i ", grid.cells[y][x].state);
+        }
+        fprintf(file, "\n");
+    }
+
+    return 0;
+}
 //Returns 0 on successful file read
-//Returns 1-9 based on different errors.
+//Returns 1-10 based on different errors.
 int readState(FILE *file)
 {
     //Checks if the file is open.
@@ -101,10 +126,14 @@ int readState(FILE *file)
 
     //Checks if the input for the grid height and width is an integer.
     if((height == 0) || (width == 0))
-    {
         return 5;
-    }
-    createGrid(width, height);
+
+    //Returns 9 if the height and width entered are greater than the maximum.
+    //Returns 10 if there is a problem allocating memory.
+    if(createGrid(width, height) == 2)
+        return 9;
+    else if(createGrid(width, height) == 1)
+        return 10;
 
     //Reads in the lines containing the grid data.
     fgets(buffer, BUFFER_SIZE, file);
@@ -168,10 +197,6 @@ int readState(FILE *file)
         //Reads the next line.
         fgets(buffer, BUFFER_SIZE, file);
     }
-
-    //Returns 9 if there is an error setting the initial values for the neighbours.
-    if(setInitialNeighbours() == 1)
-        return 9;
 
     return 0;
 }
