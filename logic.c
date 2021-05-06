@@ -47,9 +47,9 @@ unsigned int checkNeighbours(int x, int y)
     }
 
     //Loops checking all the neighbours of the cell adding to the count.
-    for(int i = MAX(x - 1, 0); i <= MIN(x+1, grid.width); i++)
+    for(int i = MAX(x - 1, 0); i <= MIN(x+1, grid.width - 1); i++)
     {
-        for(int j = MAX(y-1, 0); j <= MIN(y+1, grid.height); j++)
+        for(int j = MAX(y-1, 0); j <= MIN(y+1, grid.height - 1); j++)
         {
             //Adds to the counter if a neighbour is alive.
             if((grid.cells[j][i].state == true) && !((x == i) && (y == j)))
@@ -96,7 +96,8 @@ int setNextState(int x, int y)
     return 0;
 }
 
-//Function to set the initial s
+//Returns 0 on success
+//Returns 1 on failure.
 int setInitialState(int x, int y, bool state)
 {
     //Checks the parameters x and y are within the boundaries of the grid.
@@ -108,8 +109,11 @@ int setInitialState(int x, int y, bool state)
     return 0;
 }
 
+//Returns 0 on success
+//Returns 1 on failure
 int setInitialNeighbours()
 {
+    //Loops through the grid setting the initial values for the number of neighbours.
     for(int y = 0; y < grid.height; y++)
     {
         for(int x = 0; x < grid.width; x++)
@@ -121,6 +125,7 @@ int setInitialNeighbours()
     return 0;
 }
 
+//Frees memory used by the grid struct.
 void destroyGrid()
 {
     for(int i = 0; i < grid.height; i++)
