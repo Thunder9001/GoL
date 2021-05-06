@@ -22,9 +22,9 @@ struct Grid
 extern struct Grid grid;
 
 //Constants storing the maximum and minimum values.
-static const int MAX_HEIGHT = 100;
+static const int MAX_HEIGHT = 50;
 static const int MAX_WIDTH = 100;
-static const int MIN_HEIGHT = 40;
+static const int MIN_HEIGHT = 10;
 static const int MIN_WIDTH = 40;
 
 //Creates a grid of cells based on the user input x and y.
