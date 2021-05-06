@@ -96,6 +96,27 @@ int setNextState(int x, int y)
     return 0;
 }
 
+//Sets the next state for all the cells in the grid.
+//Updates the neighbour value for all cells after changing all the states.
+void updateGrid()
+{
+    for(int y = 0; y < grid.height; y++)
+    {
+        for(int x = 0; x < grid.width; x++)
+        {
+            setNextState(x,y);
+        }
+    }
+
+    for(int y = 0; y < grid.height; y++)
+    {
+        for(int x = 0; x < grid.width; x++)
+        {
+            grid.cells[y][x].neighbours = 0;
+            checkNeighbours(x,y);
+        }
+    }
+}
 //Returns 0 on success
 //Returns 1 on failure.
 int setInitialState(int x, int y, bool state)

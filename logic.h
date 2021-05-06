@@ -40,6 +40,9 @@ unsigned int checkNeighbours(int x, int y);
 //Implements the rules of the game of life.
 int setNextState(int x, int y);
 
+//Updates the grid.
+void updateGrid();
+
 //Function to set the initial values of the grid.
 int setInitialState(int x, int y, bool state);
 
