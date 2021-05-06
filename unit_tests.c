@@ -1,5 +1,7 @@
 #include "unity.h"
 #include "logic.h"
+#include "fileHandler.h"
+#include "graphics.h"
 
 void setUp()
 {
