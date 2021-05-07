@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     }
     else if(errorCode == 3)
     {
-        printf("Input for the number of iterations is too high, the number of iterations must be below 50.\n");
+        printf("Input for the number of iterations is too high, the number of iterations must be below 100.\n");
         return EXIT_FAILURE;
     }
     else if(errorCode == 4)
