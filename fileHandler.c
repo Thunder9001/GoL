@@ -107,7 +107,7 @@ int readState(FILE *file)
     tickRate = (int) strtol(temp2, &ptr, 10);
 
     //Return error messages 3 and 4 if the tick rate or number of iterations input are too high
-    if(iterations > 50)
+    if(iterations > 100)
     {
         return 3;
     }
