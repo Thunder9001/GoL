@@ -21,7 +21,6 @@ void test_create_grid()
     y = 50;
     test = createGrid(x, y);
     TEST_ASSERT_MESSAGE(test == 0, "Fails on edge 232 cases!");
-    destroyGrid();
 }
 
 void test_set_next_state()
@@ -46,7 +45,6 @@ void test_set_next_state()
     y = 0;
     test = setNextState(x, y);
     TEST_ASSERT_MESSAGE(test == 0, "Failure on edge cases!");
-    destroyGrid();
 }
 
 void test_set_initial_state()
@@ -71,7 +69,6 @@ void test_set_initial_state()
     y = 0;
     test = setInitialState(x, y, true);
     TEST_ASSERT_MESSAGE(test == 0, "Failure on edge cases!");
-    destroyGrid();
 }
 
 void test_check_neighbours()
@@ -96,7 +93,6 @@ void test_check_neighbours()
     y = 0;
     test = (int) checkNeighbours(x, y);
     TEST_ASSERT_MESSAGE(test == 0, "Failure on edge cases!");
-    destroyGrid();
 }
 
 void test_write_grid()
@@ -108,7 +104,6 @@ void test_write_grid()
     file = fopen("../testWriteGrid.txt", "w");
     test = writeGrid(file);
     TEST_ASSERT_MESSAGE(test == 0, "Failure on writing to file!");
-    destroyGrid();
 }
 
 void test_write_state()
@@ -120,7 +115,6 @@ void test_write_state()
     file = fopen("../testWriteGrid.txt", "w");
     test = writeState(file);
     TEST_ASSERT_MESSAGE(test == 0, "Failure on writing to file!");
-    destroyGrid();
 }
 
 void test_read_state()
@@ -131,7 +125,6 @@ void test_read_state()
     file = fopen("../testReadGrid.txt", "r");
     test = writeGrid(file);
     TEST_ASSERT_MESSAGE(test == 0, "Failure on reading from file!");
-    destroyGrid();
 }
 
 void setUp()
@@ -152,5 +145,6 @@ int main() {
     RUN_TEST(test_write_grid);
     RUN_TEST(test_write_state);
     RUN_TEST(test_read_state);
+    destroyGrid();
     return UNITY_END();
 }
