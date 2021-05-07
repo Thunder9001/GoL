@@ -1,3 +1,7 @@
+Git URL: https://gitlab.com/sc20dkvp/sc20dkvp-gol
+
+Git commit history in the commitHistory.txt file.
+
 My implementation of Conway's game of life.
 Press Enter/Return to pause/play the game.
 

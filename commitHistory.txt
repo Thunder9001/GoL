@@ -1,0 +1,191 @@
+commit 2d6a8ec6ced1fdb631128dfa995c733452aa0f09
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 16:09:25 2021 +0100
+
+    Added c99 flags for Feng-Linux
+
+commit 1ca56808c3a8bca03919dd814d9d74218e101543
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 15:37:59 2021 +0100
+
+    Added write files.
+
+commit af6acd2ac8510bb2f4223da4b4c3df0d4389db26
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 15:37:20 2021 +0100
+
+    Changed to release type.
+
+commit 5bc18eed981c3bd76965d060cf81c3afbdbb71e4
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 15:29:37 2021 +0100
+
+    Centered window display
+
+commit c2631760d0a24a2713f0ff47f63ebaaaaebe634e
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 15:20:08 2021 +0100
+
+    Fixed pointer free problem.
+
+commit ffc143896bb57bc8e1d5a9532f6ced1d92f873c2
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 14:52:26 2021 +0100
+
+    Unit tests written.
+
+commit afc222f81ab832e76531f6f5e532780539715763
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 14:10:36 2021 +0100
+
+    Fixed boundary checks
+
+commit b32eb044c4336f59595bbddcb0f8c070c421a1b9
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 02:34:57 2021 +0100
+
+    First unit test written.
+
+commit 0dcdfe911213b61e5fd4fdc0f598cb46966caa82
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 02:05:46 2021 +0100
+
+    Example input file.
+
+commit 30238d4bb19c5c15c2c7eeed30a11d9a547b6124
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 02:05:13 2021 +0100
+
+    Fixed readme
+
+commit 790be0d90033ae0abb0e393fc686d024806b3b54
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 02:02:19 2021 +0100
+
+    Fixed readme
+
+commit d163a2b341bdd72fa25c887fa80b1b32db5e65d6
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 01:59:27 2021 +0100
+
+    Added a ReadMe file to describe the rules of input.
+
+commit abef7e8b88268066311cd380252ea7d62d467a3f
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 01:52:36 2021 +0100
+
+    SDL graphics files implemented.
+
+commit 5fd713b1529c5f5375348b0c8cbf22ecbe838ec4
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Fri May 7 01:52:32 2021 +0100
+
+    SDL graphics files implemented.
+
+commit 16dfc2c135aaf47dd89bfb86a9b393d22c7c2984
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Thu May 6 21:50:15 2021 +0100
+
+    Added an update grid function.
+
+commit daeb0694c88f9a5df6a71d4b294c749dc5c3eb94
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Thu May 6 21:49:12 2021 +0100
+
+    File reading implemented in main with error messages.
+
+commit 5ee57526686145a823de7f39872bfc48831b632f
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Thu May 6 18:20:08 2021 +0100
+
+    Fixed problem in checkNeighbours() function and commented
+
+commit 274af7421c30e073ff7e27c1ddc9c294b41ed04a
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Thu May 6 18:18:33 2021 +0100
+
+    Changed max and min values for the grid height.
+
+commit 75b2a6c0a86b110e4a6687d9ace39184e879d25a
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Thu May 6 18:18:01 2021 +0100
+
+    Added headers
+
+commit 97eac647a76a0ee5545a265fcd1c7ddb7ad43c27
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Thu May 6 18:17:12 2021 +0100
+
+    Fixed minor errors and added a writeGrid function.
+
+commit f50817810dacdc32992ebbf2c78eac3cae065297
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Wed May 5 20:21:57 2021 +0100
+
+    Added filehandler.c and graphics.c to the executable.
+
+commit fa0ed4bb9fb4dcc889d2b74a2a285999f0829586
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Wed May 5 20:21:12 2021 +0100
+
+    Completed the write and read state functions.
+
+commit 81402577c40d7ee747ebd0fd477825104b886ec3
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Wed May 5 20:20:35 2021 +0100
+
+    Added code to initialise the states and neighbour values of the cell, and a memory free function.
+
+commit abad3322a547ad9b928eb86cbfaa228c724d2013
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Tue May 4 20:06:32 2021 +0100
+
+    Unity testing files added to the include directory
+
+commit 9ac66dac613a3f2a6e748b41587e8bc65ec521ad
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Tue May 4 20:06:00 2021 +0100
+
+    Initial file handler class created
+
+commit 7210101850d364cebbcb588958f1ee66d6018da6
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Tue May 4 20:05:34 2021 +0100
+
+    Neighbour check, createGrid, setNextState functions finished.
+
+commit 5076c6b2e70dcbef5771e3bcf4ab473ab105dc0d
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Sun Apr 25 23:49:32 2021 +0100
+
+    Minor changes
+
+commit a41692ae866aab9e1277424f74a49fe357f7850d
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Sun Apr 25 23:47:05 2021 +0100
+
+    CMAKELists setup
+
+commit 94289a86fe57814829d31d265d6e831201debbeb
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Sun Apr 25 23:45:08 2021 +0100
+
+    Setup logic files
+
+commit a22d006758226c17b11e6e337b8458b73a723598
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Sun Apr 25 23:35:56 2021 +0100
+
+    Added unity testing files.
+
+commit 8e7aab079a8486f2345741d364959c28c752cc27
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Sun Mar 21 17:41:28 2021 +0000
+
+    Setup cmake file and main
+
+commit 9e40a6e405f7767d908094c131f57d2d1c1f118e
+Author: Daniel Phan <sc20dkvp@leeds.ac.uk>
+Date:   Sun Mar 21 17:08:40 2021 +0000
+
+    Initial commit
