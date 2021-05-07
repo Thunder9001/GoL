@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 project(GameOfLife)
 
 set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_C_FLAGS "-std=c99")
 
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
