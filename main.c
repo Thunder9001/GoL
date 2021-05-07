@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
     FILE* writeG= fopen("../outputGrid.txt", "w");
     FILE* writeS= fopen("../outputState.txt", "w");
 
-
     //Error messages which print out if there is a problem during the reading of the file.
     errorCode = readState(read);
     if(errorCode == 1)
@@ -77,16 +76,61 @@ int main(int argc, char *argv[])
         printf("Error in setting the initial values for the program. Program will terminate.\n");
         return EXIT_FAILURE;
     }
+
+    //Initialises the window and renderer used in SDL, if it fails print out the error.
+    if(initialiseWindow())
+    {
+        printf("There was an error initialising SDL.\n");
+        return -1;
+    }
+
+    //Counts the number of iterations passed through
+    //Time checks the elapsed ms since window has been initialised.
+    int count = 0;
+    unsigned int time = SDL_GetTicks();
+
+    //Loops until it has gone through enough iterations
+    while(quit != 0)
+    {
+        //Pauses for 5 seconds after the program has finished going through all of its iterations.
+        if(count == iterations)
+        {
+            SDL_Delay(5000);
+            quit = 0;
+        }
+
+        //Checks the users input/
+        checkEvents();
+
+        //If the user hasn't chosen to quit.
+        if(quit == 1)
+        {
+            //Check if enough time has passed to update the game.
+            //Updates the game and increments the iteration counter.
+            unsigned int timePassed = SDL_GetTicks() - time;
+            if (timePassed >= tickRate) {
+                time += timePassed;
+                updateGrid();
+                count++;
+            }
+        }
+
+        //Renders the updated grid onto the window.
+        render();
+    }
+
+    //Writes the final state of the grid into two txt files.
     if(writeGrid(writeG) == 1)
         printf("Error in writing the grid to the file. File could not be saved.\n");
     if(writeState(writeS) == 1)
         printf("Error in writing the final state to the file. File could not be saved.\n");
 
-
     //Freeing the memory when the program finishes.
+    cleanup();
     fclose(read);
     fclose(writeG);
     fclose(writeS);
     destroyGrid();
+
     return 0;
 }
