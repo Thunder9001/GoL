@@ -11,7 +11,7 @@ struct Grid grid;
 //Returns 1 on failure to allocate, returns 2 on invalid parameters.
 int createGrid(int x, int y)
 {
-    //Checks that the height and width of the grid are
+    //Checks that the height and width of the grid are between min and max values.
     if((x < MIN_WIDTH) || (y < MIN_HEIGHT) || (x > MAX_WIDTH) || (y > MAX_HEIGHT))
     {
         return 2;
@@ -41,7 +41,7 @@ int createGrid(int x, int y)
 unsigned int checkNeighbours(int x, int y)
 {
     //Checks the parameters x and y are within the boundaries of the grid.
-    if((x < 0) || (x > grid.width) || (y < 0) || (y > grid.height))
+    if((x < 0) || (x >= grid.width) || (y < 0) || (y >= grid.height))
     {
         return 1;
     }
@@ -67,7 +67,7 @@ unsigned int checkNeighbours(int x, int y)
 int setNextState(int x, int y)
 {
     //Checks the parameters x and y are within the boundaries of the grid.
-    if((x < 0) || (x > grid.width) || (y < 0) || (y > grid.height))
+    if((x < 0) || (x >= grid.width) || (y < 0) || (y >= grid.height))
     {
         return 1;
     }
@@ -117,12 +117,13 @@ void updateGrid()
         }
     }
 }
+
 //Returns 0 on success
 //Returns 1 on failure.
 int setInitialState(int x, int y, bool state)
 {
     //Checks the parameters x and y are within the boundaries of the grid.
-    if((x < 0) || (x > grid.width) || (y < 0) || (y > grid.height))
+    if((x < 0) || (x >= grid.width) || (y < 0) || (y >= grid.height))
     {
         return 1;
     }
