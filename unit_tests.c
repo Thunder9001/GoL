@@ -112,7 +112,7 @@ void test_write_state()
     FILE *file = NULL;
     test = writeState(file);
     TEST_ASSERT_MESSAGE(test == 1, "Failure on open file check!");
-    file = fopen("../testWriteGrid.txt", "w");
+    file = fopen("../testWriteState.txt", "w");
     test = writeState(file);
     TEST_ASSERT_MESSAGE(test == 0, "Failure on writing to file!");
 }

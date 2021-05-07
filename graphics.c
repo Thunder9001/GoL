@@ -22,7 +22,7 @@ int initialiseWindow()
     windowWidth = ((int) grid.width * GRID_CELL_SIZE) + 1;
     windowHeight = ((int) grid.height * GRID_CELL_SIZE) + 1;
 
-    window = SDL_CreateWindow("Conway's Game of Life", 0, 0, windowWidth, windowHeight,
+    window = SDL_CreateWindow("Conway's Game of Life", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight,
                               SDL_WINDOW_OPENGL);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
