@@ -1,4 +1,4 @@
-Git URL: https://gitlab.com/sc20dkvp/sc20dkvp-gol
+Git URL: https://github.com/Thunder9001/GoL
 
 Git commit history in the commitHistory.txt file.
 
